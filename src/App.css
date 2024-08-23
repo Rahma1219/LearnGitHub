@@ -1,0 +1,278 @@
+.contact {
+    background: white;
+    border-radius: 10px;
+    max-width: 550px;
+    height: 100%;
+    padding: 30px 30px;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+}
+
+#sent {
+    display: flex;
+    gap: 8px;
+}
+
+#text {
+    color: rgba(255, 255, 255, 0.719);
+
+}
+
+#sent img {
+    width: 18px;
+    height: 18px;
+}
+
+#heading {
+    padding-bottom: 20px;
+  
+}
+
+#input1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#input1 input {
+    width: 260px;
+    border-radius: 5px;
+    height: 40px;
+    border: 1px solid grey;
+}
+
+#input1 input:hover {
+    cursor: pointer;
+    border: 1px solid hsl(169, 82%, 27%);
+}
+
+#input2 input {
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 40px;
+    border: 1px solid grey;
+}
+
+
+
+
+
+#Confetti {
+    width: 100%
+}
+
+
+#input1 input:focus {
+    cursor: pointer;
+    border: 2px solid hsl(169, 82%, 27%);
+    outline: none;
+}
+
+#input2 input:focus {
+    cursor: pointer;
+    border: 2px solid hsl(169, 82%, 27%);
+    outline: none;
+}
+
+
+#checks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* input:active,
+textarea:active {
+    border-color: #5cc198;
+} */
+
+#textarea textarea:focus {
+    border: 2px solid hsl(169, 82%, 27%);
+    outline: none;
+}
+
+
+#check {
+    border: 1px solid rgba(128, 128, 128, 0.546);
+    border-radius: 8px;
+    height: 40px;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+}
+
+.red {
+    border: 1px solid red;
+}
+
+.successmessage {
+    text-align: center;
+    padding: 20px;
+    background-color: hsl(187, 24%, 22%);
+    border-radius: 8px;
+    color: white;
+    position: absolute;
+    top: 20px;
+    animation-name: sucessmessage;
+    animation-duration: 1s;
+}
+#sm{
+    display: flex;
+    justify-content: center;
+}
+
+
+@keyframes sucessmessage {
+    from {
+        top: 0
+    }
+
+    to {
+        top: 20px;
+    }
+
+}
+
+.check {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+input[type=radio] {
+    accent-color: hsl(169, 82%, 27%);
+    cursor: pointer;
+
+}
+
+input[type=checkbox] {
+    accent-color: hsl(169, 82%, 27%);
+
+}
+
+#bggreen {
+    background-color: hsl(169, 82%, 27%);
+}
+
+#check2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 20px 0px;
+}
+
+
+#check input {
+    border: 1px solid rgba(128, 128, 128, 0.418);
+    width: 15px;
+    height: 15px;
+
+}
+
+#GeneralEnquiry {
+    margin-left: 20px;
+}
+
+#SuportRequest {
+    margin-left: 20px;
+}
+
+#textarea textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 98%;
+    border-radius: 5px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    resize: none;
+}
+
+#textarea textarea:hover {
+    cursor: pointer;
+    border: 1px solid hsl(169, 82%, 27%);
+}
+
+#star {
+    color: hsl(169, 82%, 27%);
+}
+
+
+
+
+#warningmessage {
+    color: rgb(206, 70, 70);
+    margin: 0;
+    padding-top: 5px;
+}
+
+
+#btn button {
+    background-color: hsl(169, 82%, 27%);
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    height: 45px;
+    margin: 0 auto;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn button:hover {
+    background-color: hsl(170, 85%, 16%);
+}
+
+@media screen and (max-width: 600px) {
+    .contact {
+        height: 100%;
+    }
+
+    #input1 {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    #input2 input {
+        width: 260px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    #input2{
+        display: flex;
+        justify-content: center;
+    }
+    #root {
+      
+        padding: 30px 30px;
+       
+    }
+
+    #checks {
+        flex-wrap: wrap;
+    }
+
+    #textarea {
+        width: 260px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+  
+}
