@@ -31,7 +31,7 @@ function App() {
   async function testvalidation() {
     try {
       const response = await userSchema.validate(formData, { abortEarly: false });
-      console.log(response, "is valid object")
+      // console.log(response, "is valid object")
     } catch (error) {
       var errors = {};
       error.inner.forEach((error) => {
