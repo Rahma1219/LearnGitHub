@@ -21,7 +21,7 @@ function App() {
 
   const userSchema = yup.object().shape({
     firstName: yup.string().required() .min(3),
-    lastName: yup.string().required(),
+    lastName: yup.string().required() .min(3),
     email: yup.string().email().required(),
     message: yup.string().required(),
     QueryType: yup.string().oneOf(["General Enquiry", "Suport Request"]),
