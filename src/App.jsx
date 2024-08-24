@@ -118,7 +118,7 @@ function App() {
                 onChange={handleOnChange}
               />
 
-              {Arrayoferrors.firstName ? <p id='warningmessage'>The name  less than 3 letters </p> : null}
+              {Arrayoferrors.firstName ? <p id='warningmessage'>The name is less than 3 letters </p> : null}
             </div>
 
             <div>
@@ -128,7 +128,7 @@ function App() {
                 name='lastName'
                 value={formData.lastName}
                 onChange={handleOnChange} />
-              {Arrayoferrors.lastName ? <p id='warningmessage'>The name  less than 3 letters </p> : null}
+              {Arrayoferrors.lastName ? <p id='warningmessage'>The name is less than 3 letters </p> : null}
 
             </div>
 
