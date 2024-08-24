@@ -20,7 +20,7 @@ function App() {
   })
 
   const userSchema = yup.object().shape({
-    firstName: yup.string().required(),
+    firstName: yup.string().required() .min(3),
     lastName: yup.string().required(),
     email: yup.string().email().required(),
     message: yup.string().required(),
