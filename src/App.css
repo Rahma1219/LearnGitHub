@@ -114,9 +114,7 @@ textarea:active {
     border: 2px solid hsl(169, 82%, 27%);
 }
 
-.red {
-    border: 1px solid red;
-}
+
 
 .successmessage {
     text-align: center;
