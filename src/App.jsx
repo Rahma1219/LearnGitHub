@@ -2,8 +2,8 @@ import Confetti from 'react-confetti'
 import { useEffect, useState } from 'react';
 import './App.css'
 import * as yup from "yup"
-// import star from '../public/images/'
-import sucesscheck from '../public/images/icon-success-check.svg'
+
+
 
 function App() {
 
@@ -18,7 +18,6 @@ function App() {
     QueryType: "",
     ruleAccepted: false,
   })
-  // const [formvalues,setFormvalues]=useState(formData)
 
   const userSchema = yup.object().shape({
     firstName: yup.string().required(),
@@ -26,13 +25,13 @@ function App() {
     email: yup.string().email().required(),
     message: yup.string().required(),
     QueryType: yup.string().oneOf(["General Enquiry", "Suport Request"]),
-    ruleAccepted: yup.boolean().required(),
+    ruleAccepted: yup.boolean(),
   })
 
   async function testvalidation() {
     try {
       const response = await userSchema.validate(formData, { abortEarly: false });
-
+      console.log(response, "is valid object")
     } catch (error) {
       var errors = {};
       error.inner.forEach((error) => {
@@ -40,27 +39,18 @@ function App() {
         errors[error.path] = error.message
       })
       setArrayOfErrors(errors);
-      // console.log(errors)
+      console.log(errors)
     }
-
-
   }
-  useEffect(() => {
-    console.log(Arrayoferrors)
-    if (Object.keys(Arrayoferrors).length == 0 && formSubmitted) {
-      console.log('hyah')
 
-    }
-  }, [Arrayoferrors])
+
 
   function handleOnFormSubmit(event) {
-    console.log(formData)
+
     testvalidation();
     event.preventDefault();
-    console.log('Form data submitted:', formData);
-    setFormSubmitted(true);
-
-
+    // console.log('Form data submitted:', formData);
+    // setFormSubmitted(true);
   }
 
   function handleOnChange(event) {
@@ -72,31 +62,27 @@ function App() {
       keyValue = event.target.checked;
     }
 
-
     setFormData({
       ...formData,
       [keyName]: keyValue
 
     })
 
-
   }
 
 
-
-
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  // const [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
     <>
 
-      {formSubmitted ? (
+      {/* {formSubmitted ? (
         <div id='sm'>
           <div className="successmessage">
             <div id='sent'>
               {/* <Confetti
                  id='Confetti'
-                 /> */}
+                 /> 
               <span>  <img src={sucesscheck} alt="" /> </span>
 
               <span >Message Sent!</span>
@@ -111,7 +97,7 @@ function App() {
         </div>
 
 
-      ) : null}
+      ) : null} */}
 
 
       <div className='contact'>
@@ -119,6 +105,7 @@ function App() {
         <h1 id='heading'>Contact Us</h1>
 
         <form onSubmit={handleOnFormSubmit}>
+
           <div id='input1'>
             <div>
               <p><label htmlFor='firstName'> First Name <span id='star'>*</span></label>
@@ -132,8 +119,6 @@ function App() {
               />
 
               {Arrayoferrors.firstName ? <p id='warningmessage'>This field is required </p> : null}
-
-
             </div>
 
             <div>
@@ -183,7 +168,6 @@ function App() {
                   <input type="radio"
                     id="SuportRequest"
                     name='QueryType'
-                    // onClick={changebgcolor}
                     onChange={handleOnChange}
                     value="Suport Request"
                   ></input>
@@ -200,6 +184,7 @@ function App() {
             <div>
               <p><label htmlfor='message'>Message <span id='star'>*</span> </label></p>
               <textarea
+              id='message'
                 name="message"
                 value={formData.message}
                 onChange={handleOnChange}
@@ -207,6 +192,7 @@ function App() {
             </div>
             {Arrayoferrors.message ? <p id='warningmessage'>This field is required </p> : null}
           </div>
+
 
 
           <div id='check2'>

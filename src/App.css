@@ -103,7 +103,7 @@ textarea:active {
     border: 1px solid rgba(128, 128, 128, 0.546);
     border-radius: 8px;
     height: 40px;
-    width: 260px;
+    width: 255px;
     display: flex;
     align-items: center;
     padding: 5px;
@@ -270,7 +270,6 @@ input[type=checkbox] {
     }
 
     #textarea {
-        width: 260px;
         justify-content: center;
         margin: 0 auto;
     }
