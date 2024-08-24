@@ -31,13 +31,13 @@ function App() {
   async function testvalidation() {
     try {
       const response = await userSchema.validate(formData, { abortEarly: false });
-      // console.log(response, "is valid object")
+      console.log(response)
     } catch (error) {
       var errors = {};
       error.inner.forEach((error) => {
         console.log(`${error.path} : ${error.message}`);
         errors[error.path] = error.message
-      })
+      });
       setArrayOfErrors(errors);
       console.log(errors)
     }
@@ -49,7 +49,7 @@ function App() {
 
     testvalidation();
     event.preventDefault();
-    // console.log('Form data submitted:', formData);
+    // console.log( formData);
     // setFormSubmitted(true);
   }
 
@@ -152,7 +152,9 @@ function App() {
             <div id='input32'>
               <p><label > Query Type <span id='star'>*</span> </label></p>
               <div id='checks'>
-                <div id='check'>
+
+                <label htmlFor='GeneralEnquiry' id='check' >
+
                   <input
                     type="radio"
                     id="GeneralEnquiry"
@@ -160,20 +162,20 @@ function App() {
                     value="General Enquiry"
                     onChange={handleOnChange}
                   ></input>
-                  <label htmlFor='GeneralEnquiry' >General Enquiry</label>
+                  General Enquiry
+                </label>
 
-                </div>
 
-                <div id='check'>
+                <label htmlFor='SuportRequest' id='check'>
                   <input type="radio"
                     id="SuportRequest"
                     name='QueryType'
                     onChange={handleOnChange}
                     value="Suport Request"
                   ></input>
-                  <label htmlFor='SuportRequest'>Suport Request</label>
-                </div>
+                  Suport Request</label>
               </div>
+
               {Arrayoferrors.QueryType ? <p id='warningmessage'>please select a query type</p> : null}
 
             </div>
@@ -182,9 +184,9 @@ function App() {
 
           <div id='textarea'>
             <div>
-              <p><label htmlfor='message'>Message <span id='star'>*</span> </label></p>
+              <p><label htmlFor='message'>Message <span id='star'>*</span> </label></p>
               <textarea
-              id='message'
+                id='message'
                 name="message"
                 value={formData.message}
                 onChange={handleOnChange}
@@ -200,13 +202,12 @@ function App() {
               className='check'
               required
               type="checkbox"
-
               onChange={handleOnChange}
               name='ruleAccepted'
               checked={formData.ruleAccepted}
 
             ></input>
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
             <label > I consent to being contacted by the team <span id='star'>*</span></label>
 
             {Arrayoferrors.ruleAccepted ? <p id='warningmessage'>To submit this form,please consent to being contacted </p> : null}

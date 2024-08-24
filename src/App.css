@@ -109,6 +109,10 @@ textarea:active {
     padding: 5px;
     gap: 5px;
 }
+#check:hover{
+    background-color: hsl(148, 38%, 91%);
+    border: 2px solid hsl(169, 82%, 27%);
+}
 
 .red {
     border: 1px solid red;
